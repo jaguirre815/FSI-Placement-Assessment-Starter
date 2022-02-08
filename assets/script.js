@@ -1,27 +1,89 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
-// First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
 
-// We'll use these variables to track the counts of each cookie type
-let gb = 0 // Gingerbread
-let cc = 0 // Chocolate Chip
-let sugar = 0 // Sugar Sprinkle
 
-// selecting the element with an id of credit
-const credit = document.querySelector('#credit')
-// selecting the element with an id of add-gb
-const gbPlusBtn = document.querySelector('#add-gb')
+let yourName = "Joel Aguirre"
+let cookieQty = 0
+let gbTotal = 0
+let cc = 0
+let SugarSp = 0
+//summary button total
+let qtyDisplay = document.querySelector('#qty-total')
 
-// Code to update name display
-credit.textContent = `Created by ${yourName}`
+let GingerTotal = document.querySelector('#qty-gb')
+let ChChTotal = document.querySelector('#qty-cc')
+let SugarSpTotal = document.querySelector('#qty-sugar')
 
-// Event listener for clicks on the "+" button for Gingerbread cookies
-gbPlusBtn.addEventListener('click', function() {
-// HINT: You can delete this console.log after you no longer need it!
-console.log('Gingerbread + button was clicked!')
 
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+//adding the +- buttons
+
+//Ginger bread buttons
+let GingerBreadUP = document.querySelector('#add-gb')
+let GingerBreadDown = document.querySelector('#minus-gb')
+
+// functions for Gingerbread buttons
+GingerBreadUP.addEventListener('click', function(e) {
+    gbTotal++
+    cookieQty = gbTotal + cc + SugarSp
+    GingerTotal.textContent = `${gbTotal}`
+qtyDisplay.textContent = cookieQty
+})
+  
+GingerBreadDown.addEventListener('click', function(e){
+   if(gbTotal >0){
+    gbTotal-- 
+    cookieQty = gbTotal + cc + SugarSp
+   GingerTotal.textContent = `${gbTotal}`
+   qtyDisplay.textContent = cookieQty
+   }
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+// chocolate chip buttons
+
+let ChocolateUp = document.querySelector('#add-cc')
+let ChocolateDn = document.querySelector('#minus-cc')
+
+//functions for Chocolate chip buttons
+ChocolateUp.addEventListener('click', function(e){
+    cc++
+    cookieQty = gbTotal + cc + SugarSp
+    ChChTotal.textContent = `${cc}`
+    qtyDisplay.textContent = cookieQty
+})
+ChocolateDn.addEventListener('click', function(e){
+    if(cc >0){
+    cc--
+    cookieQty = gbTotal + cc + SugarSp
+    ChChTotal.textContent = `${cc}`
+    qtyDisplay.textContent = cookieQty
+    
+    }
+})
+
+// Sugar Sprinkle
+
+let SugarSpUp = document.querySelector('#add-sugar')
+let SugarSpDn = document.querySelector('#minus-sugar')
+
+//functions for Sugar Sprinkle
+SugarSpUp.addEventListener('click', function(e){
+    SugarSp++
+    cookieQty = gbTotal + cc + SugarSp
+    SugarSpTotal.textContent = `${SugarSp}`
+    qtyDisplay.textContent = cookieQty
+})
+SugarSpDn.addEventListener('click', function(e){
+    if(SugarSp >0){
+    SugarSp--
+    cookieQty = gbTotal + cc + SugarSp
+    SugarSpTotal.textContent = `${SugarSp}`
+    qtyDisplay.textContent = cookieQty
+    }
+})
+
+
+
+
+
+
+
+
+d
